@@ -32,8 +32,8 @@ Coverage runs on any Harness build infrastructure, including Kubernetes.
 Provide the coverage token as the `QLTY_COVERAGE_TOKEN` environment variable
 (recommended, via a Harness secret) or the `token` setting.
 
-For a **workspace token** (prefix `qltcw_`), also set the `project` setting so the
-upload is attributed to the right project.
+Workspace tokens (prefix `qltcw_`) work without extra configuration — the project
+is inferred from the repository. Set the `project` setting only to override it.
 
 ## Settings
 
@@ -42,7 +42,7 @@ upload is attributed to the right project.
 | `files` | Coverage report file(s) to upload. Comma- or space-separated. | |
 | `format` | Report format: `lcov`, `cobertura`, `clover`, `coverprofile`, `jacoco`, `simplecov`, `qlty`. Inferred if omitted. | |
 | `token` | Coverage token. Prefer the `QLTY_COVERAGE_TOKEN` env var. | |
-| `project` | Project name. Required for workspace tokens (`qltcw_`). | |
+| `project` | Project name. Inferred from the repository; set only to override. | |
 | `tag` | Tag/name for this upload (e.g. a matrix OS). | |
 | `add_prefix` | Prefix to add to file paths in the payload. | |
 | `strip_prefix` | Prefix to strip from absolute paths. | |
